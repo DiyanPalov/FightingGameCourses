@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FightingGameCourses.Data;
 using FightingGameCourses.Entities;
+using FightingGameCourses.Extensions;
 
 namespace FightingGameCourses.Areas.Admin.Controllers
 {
@@ -37,6 +38,8 @@ namespace FightingGameCourses.Areas.Admin.Controllers
                                              }).ToListAsync();
 
 
+            ViewBag.CategoryId = categoryId;
+
             return View(list);
         }
 
@@ -59,9 +62,17 @@ namespace FightingGameCourses.Areas.Admin.Controllers
         }
 
         // GET: Admin/CategoryItem/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create(int categoryId)
         {
-            return View();
+            List<MediaType> mediaTypes = await _context.MediaType.ToListAsync();
+
+            CategoryItem categoryItem = new CategoryItem
+            {
+                CategoryId = categoryId,
+                MediaTypes = mediaTypes.ConvertToSelectList(0)
+            };
+
+            return View(categoryItem);
         }
 
         // POST: Admin/CategoryItem/Create
@@ -75,7 +86,7 @@ namespace FightingGameCourses.Areas.Admin.Controllers
             {
                 _context.Add(categoryItem);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index),new {categoryId=categoryItem.CategoryId});
             }
             return View(categoryItem);
         }
