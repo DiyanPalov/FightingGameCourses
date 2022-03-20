@@ -8,10 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using FightingGameCourses.Data;
 using FightingGameCourses.Entities;
 using FightingGameCourses.Extensions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FightingGameCourses.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class CategoryItemController : Controller
     {
         private readonly ApplicationDbContext _context;
