@@ -3,6 +3,7 @@ using FightingGameCourses.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -104,13 +105,31 @@ namespace FightingGameCourses.Controllers
                     return PartialView("_UserRegistrationPartial", registrationModel);
                 }
 
-                ModelState.AddModelError("", "Registration attempt failed");
+                AddErrorsToModelState(result);
             }
 
             return PartialView("_UserRegistrationPartial", registrationModel);
 
         }
 
+        [AllowAnonymous]
+        public async Task<bool> UserNameExists(string userName)
+        {
+            bool userNameExists = await _context.Users.AnyAsync(u => u.UserName.ToUpper() == userName.ToUpper());
+
+            if (userNameExists)
+                return true;
+
+            return false;
+        }
+
+        private void AddErrorsToModelState(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+        }
 
     }
 }
