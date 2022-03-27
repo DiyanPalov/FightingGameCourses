@@ -48,7 +48,7 @@
         $(".progress").show("fade");
 
 
-        $('input[type=checkbox]:checked').each(function () {
+        $('input[type=checkbox]:checked').each(function(){
             var userModel = {
                 Id: $(this).attr("value")
             };

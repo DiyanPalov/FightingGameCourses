@@ -74,7 +74,7 @@
             PostCode: postCode,
             PhoneNumber: phoneNumber,
             AcceptUserAgreement: true,
-            CategoryId: categoryId
+           // CategoryId: categoryId
         };
 
         $.ajax({

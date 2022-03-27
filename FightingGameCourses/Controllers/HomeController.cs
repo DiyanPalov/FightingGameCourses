@@ -1,4 +1,6 @@
-﻿using FightingGameCourses.Models;
+﻿using FightingGameCourses.Data;
+using FightingGameCourses.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,10 +14,16 @@ namespace FightingGameCourses.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager)
         {
             _logger = logger;
+            _context = context;
+            _signInManager = signInManager;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
