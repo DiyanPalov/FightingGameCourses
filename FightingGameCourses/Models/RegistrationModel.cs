@@ -20,11 +20,12 @@ namespace FightingGameCourses.Models
         [Required]
         [Compare("Password")]
         [DataType(DataType.Password)]
+        [Display(Name = "Confirm Password")]
         public string ConfirmPassword { get; set; }
 
         [Required]
         [StringLength(100,MinimumLength =2)]
-        [Display(Name ="First Name")]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
@@ -39,7 +40,7 @@ namespace FightingGameCourses.Models
 
         [Required]
         [RegularExpression("^[a-zA-Z]{1,2}[0-9][0-9A-Za-z]{0,1} {0,1}[0-9][A-Za-z]{2}$")]
-        [Display(Name ="Post Code")]
+        [Display(Name = "Post Code")]
         public string PostCode { get; set; }
 
         [Required]
