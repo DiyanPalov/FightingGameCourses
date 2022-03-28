@@ -15,7 +15,7 @@
             sb.AppendLine($"'{ADMIN_USER_GUID}'");
             sb.AppendLine(",'admin@fightinggamescourses.co.uk'");
             sb.AppendLine(",'ADMIN@FIGHTINGGAMESCOURSES.CO.UK'");
-            sb.AppendLine(",'admin@techtree.co.uk'");
+            sb.AppendLine(",'admin@fightinggamescourses.co.uk'");
             sb.AppendLine(", 0");
             sb.AppendLine(", 0");
             sb.AppendLine(", 0");
