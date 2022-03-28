@@ -1,6 +1,5 @@
 ﻿@using FightingGameCourses.Entities
 @model IEnumerable<Category>
-
 <!--Hero Section-->
 <div class="hero section">
     <img class="img-fluid" src="~/Images/HomeImage.jpg">
@@ -16,7 +15,7 @@
 <div id="Courses" class="courses section">
     <h3 class="section-header">Courses</h3>
     @{ var count = Model.Count() / 4;
-                    var catList = new List<Category>(); }
+        var catList = new List<Category>(); }
     @for (int i = 0; i <= count; i++)
     {
         catList = Model.Skip(i * 4).Take(4).ToList();
