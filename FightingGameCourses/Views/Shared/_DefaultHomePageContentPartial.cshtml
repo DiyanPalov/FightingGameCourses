@@ -4,7 +4,7 @@
     <img class="img-fluid" src="~/Images/HomeImage.jpg">
     <div class="hero-heading">
         <h2 class="hero-heading-text">Improve your Fighting Game skills at <strong>Fighting Game Courses</strong></h2>
-        <a id="HeroRegisterButton" class="btn btn-outline-info btn-lg text-light hero-register-button">Register</a>
+        <a id="HeroRegisterButton" class="btn btn-outline-info btn-lg text-light hero-register-button" data-toggle="modal" data-target="#UserRegistrationModal">Register</a>
     </div>
 </div>
 
@@ -24,7 +24,7 @@
     {
         catList = Model.Skip(i * itemsPerRow).Take(itemsPerRow).ToList();
 
-        <partial name="_DisplayCardRowPartial" model="catList" />
+        <partial name="_DisplayCardRowPartial" model="catList"/>
 
     }
 </div>

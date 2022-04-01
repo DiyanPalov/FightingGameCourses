@@ -1,4 +1,11 @@
 ﻿$(function () {
+    $("#UserRegistrationModal").on('hidden.bs.modal', function (e) {
+        $("#UserRegistrationModal input[name='CategoryId']").val('0');
+    });
+    $('.RegisterLink').click(function () {
+        $("#UserRegistrationModal input[name='CategoryId']").val($(this).attr('data-categoryId'));
+        $("#UserRegistrationModal").modal("show");
+    });
 
     $("#UserRegistrationModal input[name = 'AcceptUserAgreement']").click(onAcceptUserAgreementClick);
 
@@ -61,6 +68,7 @@
         var address2 = $("#UserRegistrationModal input[name='Address2']").val();
         var postCode = $("#UserRegistrationModal input[name='PostCode']").val();
         var phoneNumber = $("#UserRegistrationModal input[name='PhoneNumber']").val();
+        var categoryId = $("#UserRegistrationModal input[name='CategoryId']").val();
 
         var user = {
             __RequestVerificationToken: antiForgeryToken,
@@ -74,7 +82,7 @@
             PostCode: postCode,
             PhoneNumber: phoneNumber,
             AcceptUserAgreement: true,
-           // CategoryId: categoryId
+            CategoryId: categoryId
         };
 
         $.ajax({
@@ -101,7 +109,7 @@
                     location.href = '/Home/Index';
                 }
             },
-            error: function (xhr,ajaxOptions,thrownError) {
+            error: function (xhr, ajaxOptions, thrownError) {
                 var errorText = "Status: " + xhr.status + " - " + xhr.statusText;
 
                 PresentClosableBootstrapAlert("#alert_placeholder_register", "danger", "Error!", errorText);
