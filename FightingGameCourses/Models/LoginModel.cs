@@ -22,5 +22,7 @@ namespace FightingGameCourses.Models
         public bool RememberMe { get; set; }
 
         public string LoginInValid { get; set; }
+
+        public string LoginFailedMessage { get; set; }
     }
 }

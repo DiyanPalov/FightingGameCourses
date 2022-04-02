@@ -21,6 +21,7 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Code Snippets\" />
     <Folder Include="SqlScripts\" />
+  <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
 </Project>

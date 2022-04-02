@@ -22,23 +22,22 @@ namespace FightingGameCourses.Data
                 try
                 {
 
-                    {
-                        _context.RemoveRange(userCategoryItemsToDelete);
-                        await _context.SaveChangesAsync();
+                    _context.RemoveRange(userCategoryItemsToDelete);
+                    await _context.SaveChangesAsync();
 
-                        if (userCategoryItemsToAdd != null)
-                        {
-                            _context.AddRange(userCategoryItemsToAdd);
-                            await _context.SaveChangesAsync();
-                        }
-                        await dbContextTransaction.CommitAsync();
+                    if (userCategoryItemsToAdd != null)
+                    {
+                        _context.AddRange(userCategoryItemsToAdd);
+                        await _context.SaveChangesAsync();
                     }
+                    await dbContextTransaction.CommitAsync();
+
                 }
+
                 catch (Exception ex)
                 {
                     await dbContextTransaction.DisposeAsync();
                 }
-
             }
         }
     }

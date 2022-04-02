@@ -1,6 +1,7 @@
 ﻿using FightingGameCourses.Data;
 using FightingGameCourses.Entities;
 using FightingGameCourses.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace FightingGameCourses.Controllers
 {
+    [Authorize]
     public class CategoriesToUserController : Controller
     {
         private readonly ApplicationDbContext _context;
