@@ -19,4 +19,4 @@ ASP.NET Core App for the final project at SoftUni C# Web Module.
 * [xUnit](https://github.com/xunit/xunit)
 
 # Important note
-* registration requires valid UK based postcode and a valid UK based phone, you can generate the postcode here https://www.doogal.co.uk/PostcodeGenerator.php and the phone number here https://fakenumber.org/united-kingdom
+* registration requires valid UK based postcode and a valid UK based phone number, you can generate the postcode here https://www.doogal.co.uk/PostcodeGenerator.php and the phone number here https://fakenumber.org/united-kingdom
