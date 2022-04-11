@@ -14,6 +14,6 @@ ASP.NET Core App for the final project at SoftUni C# Web Module.
 * CSS
 * Razor
 * [Bootstrap](https://github.com/twbs/bootstrap)
-* Azure Cloud
+* [Azure Cloud](https://fightinggamecourses.azurewebsites.net/) - click to open the website link
 * [MyTested.AspNetCore](https://github.com/ivaylokenov/MyTested.AspNetCore.Mvc)
 * [xUnit](https://github.com/xunit/xunit)
