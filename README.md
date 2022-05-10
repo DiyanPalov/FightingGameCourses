@@ -1,5 +1,5 @@
 # FightingGameCourses
-ASP.NET Core App for the final project at SoftUni C# Web Module.
+ASP.NET Core MVC App for the final project at SoftUni C# Web Module.
 
 # Technologies Used:
 * [ASP.NET Core](https://github.com/dotnet/aspnetcore)
